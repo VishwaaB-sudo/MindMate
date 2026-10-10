@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#7863bd" />
+  <title>MindMate — Your little space to reset</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#" data-page="home">
+        <span class="brand-mark">♡</span>
+        <span><strong>mindmate</strong><small>YOUR LITTLE SPACE TO RESET</small></span>
+      </a>
+      <div class="nav-label">YOUR SPACE</div>
+      <nav class="nav-list" aria-label="Main navigation">
+        <button class="nav-item active" data-page="home"><span>⌂</span> Home</button>
+        <button class="nav-item" data-page="mood"><span>☻</span> Mood check-in</button>
+        <button class="nav-item" data-page="calm"><span>☼</span> Calm corner</button>
+        <button class="nav-item" data-page="study"><span>▤</span> Study planner</button>
+        <button class="nav-item" data-page="journal"><span>✎</span> Private journal</button>
+        <button class="nav-item" data-page="insights"><span>⌁</span> My reflections</button>
+        <button class="nav-item" data-page="support"><span>♡</span> Get support</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="privacy-note"><span class="privacy-icon">♧</span><div><strong>Your space, your pace.</strong><p>Your entries stay in this browser demo.</p></div></div>
+        <button class="nav-item settings-link" data-page="settings"><span>⚙</span> Settings & privacy</button>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu" aria-label="Open navigation">☰</button>
+        <div class="breadcrumb">MindMate <span>/</span> <strong id="pageCrumb">Home</strong></div>
+        <div class="topbar-right"><span class="demo-pill"><i></i> DEMO MODE</span><div class="avatar">U</div></div>
+      </header>
+
+      <section class="page active" id="page-home">
+        <div class="welcome-row">
+          <div><p class="eyebrow">SATURDAY, OCTOBER 10 · A FRESH START</p><h1>Hey there, Uma <span class="wave">✦</span></h1><p class="subheading">You don't have to have it all figured out today.</p></div>
+          <div class="sun-art" aria-hidden="true"><span class="sun">☼</span><span class="cloud cloud-one"></span><span class="cloud cloud-two"></span><span class="spark spark-one">✦</span><span class="spark spark-two">·</span></div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-copy"><span class="hero-tag">A MOMENT FOR YOU</span><h2>How are you feeling<br>in this moment?</h2><p>A tiny check-in can help you notice what you need.</p><button class="btn btn-light" data-goto="mood">Check in with yourself <span>→</span></button></div>
+          <div class="hero-illustration" aria-hidden="true"><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="plant-pot">♧</div><div class="hero-heart">♡</div><div class="hero-star">✦</div></div>
+        </div>
+        <div class="section-heading"><div><p class="eyebrow">YOUR DAILY RESET</p><h2>Little things that help</h2></div><span class="soft-label">Take what you need</span></div>
+        <div class="quick-grid">
+          <button class="quick-card lilac" data-goto="calm"><span class="quick-icon">☼</span><span class="quick-title">Take a breather</span><span class="quick-desc">A mindful pause, just for you.</span><span class="quick-arrow">↗</span></button>
+          <button class="quick-card mint" data-goto="study"><span class="quick-icon">▤</span><span class="quick-title">Untangle your tasks</span><span class="quick-desc">One small step at a time.</span><span class="quick-arrow">↗</span></button>
+          <button class="quick-card peach" data-goto="journal"><span class="quick-icon">✎</span><span class="quick-title">Let it out</span><span class="quick-desc">Write without being judged.</span><span class="quick-arrow">↗</span></button>
+        </div>
+        <div class="home-bottom-grid">
+          <div class="panel mood-panel"><div class="panel-head"><div><p class="eyebrow">A LITTLE AWARENESS</p><h3>Your recent check-ins</h3></div><button class="text-link" data-goto="insights">View all →</button></div><div id="recentMoods" class="recent-moods"></div></div>
+          <div class="quote-card"><span class="quote-mark">“</span><p>You are allowed to be a work in progress and still be proud of yourself.</p><span>— A gentle reminder</span><div class="quote-decoration">✳</div></div>
+        </div>
+      </section>
+
+      <section class="page" id="page-mood">
+        <div class="page-intro"><p class="eyebrow">NO RIGHT OR WRONG ANSWERS</p><h1>Let's check in.</h1><p>Pause for a second. What feels closest to how you're doing right now?</p></div>
+        <div class="panel mood-form-panel">
+          <div class="mood-options" id="moodOptions">
+            <button class="mood-option" data-mood="Happy" data-emoji="😊"><span>😊</span><strong>Happy</strong><small>Things feel good</small></button>
+            <button class="mood-option" data-mood="Calm" data-emoji="😌"><span>😌</span><strong>Calm</strong><small>I'm at ease</small></button>
+            <button class="mood-option" data-mood="Okay" data-emoji="😐"><span>😐</span><strong>Okay</strong><small>Taking it as it comes</small></button>
+            <button class="mood-option" data-mood="Stressed" data-emoji="😟"><span>😟</span><strong>Stressed</strong><small>A lot on my mind</small></button>
+            <button class="mood-option" data-mood="Low" data-emoji="😔"><span>😔</span><strong>Low</strong><small>Today feels heavy</small></button>
+          </div>
+          <label class="field-label" for="moodReason">What's been on your mind? <span>OPTIONAL</span></label>
+          <div class="tag-options" id="reasonOptions"><button data-reason="Studies & exams">Studies & exams</button><button data-reason="Friends">Friends</button><button data-reason="Family">Family</button><button data-reason="Sleep & energy">Sleep & energy</button><button data-reason="Personal">Personal</button></div>
+          <label class="field-label" for="moodNote">Anything you'd like to note? <span>OPTIONAL</span></label>
+          <textarea id="moodNote" rows="3" placeholder="A few words for yourself..."></textarea>
+          <div class="form-footer"><span class="privacy-inline">♧ Private to this browser demo</span><button class="btn btn-primary" id="saveMood">Save check-in <span>→</span></button></div>
+          <p id="moodFeedback" class="feedback" role="status"></p>
+        </div>
+      </section>
+
+      <section class="page" id="page-calm">
+        <div class="page-intro"><p class="eyebrow">A SOFTER MOMENT</p><h1>Welcome to your Calm Corner.</h1><p>You don't need to fix everything right now. Just make a little room to breathe.</p></div>
+        <div class="calm-layout">
+          <div class="panel breathing-panel"><span class="hero-tag purple-tag">GUIDED BREATHING</span><h2>Let's slow things down.</h2><p class="muted">Follow the circle at a pace that feels comfortable. Stop any time you want.</p>
+            <div class="breathing-stage"><div class="breath-ring"><div class="breath-core" id="breathCore"><span id="breathInstruction">Ready?</span><small id="breathSub">When you're ready</small></div></div><div class="breath-star">✦</div></div>
+            <div class="breath-controls"><button class="btn btn-primary" id="breathStart">Start breathing</button><button class="btn btn-outline" id="breathStop">Stop</button></div><p class="tiny-note">This is an optional relaxation exercise, not medical treatment.</p>
+          </div>
+          <div class="calm-side"><div class="panel activity-panel"><span class="activity-icon mint-icon">✳</span><h3>Notice 5 things</h3><p>Gently notice things you can see, feel, hear, smell, and taste. Take your time.</p><button class="text-link" id="groundingBtn">Try a grounding prompt →</button><p id="groundingPrompt" class="grounding-prompt hidden">Look around and name five things you can see. No rush.</p></div><div class="mini-reminder"><span>☁</span><div><strong>A reminder for you</strong><p>Rest is part of making progress, not the opposite of it.</p></div></div></div>
+        </div>
+      </section>
+
+      <section class="page" id="page-study">
+        <div class="page-intro"><p class="eyebrow">SMALL STEPS COUNT</p><h1>Make space to focus.</h1><p>Let's turn that long to-do list into one doable next step.</p></div>
+        <div class="study-grid">
+          <div class="panel task-panel"><div class="panel-head"><div><p class="eyebrow">YOUR PLAN</p><h3>Study tasks</h3></div><span class="count-badge" id="taskCount">0 tasks</span></div>
+            <form id="taskForm" class="task-form"><input id="taskInput" type="text" maxlength="120" placeholder="What is one thing to work on?" required><select id="taskPriority" aria-label="Task priority"><option value="Gentle">Gentle</option><option value="Important">Important</option><option value="Urgent">Urgent</option></select><button class="btn btn-primary" type="submit">+ Add</button></form>
+            <div class="task-list" id="taskList"></div>
+          </div>
+          <div class="panel timer-panel"><p class="eyebrow">FOCUS, THEN REST</p><h3>Focus timer</h3><p class="muted">Choose a small focus session. You can pause whenever you need.</p><div class="timer-display" id="timerDisplay">25:00</div><div class="timer-mode"><button class="active" data-minutes="25">Focus · 25m</button><button data-minutes="5">Break · 5m</button><button data-minutes="10">Reset · 10m</button></div><div class="timer-actions"><button class="btn btn-primary" id="timerToggle">Start focus</button><button class="btn btn-outline" id="timerReset">Reset</button></div><p class="tiny-note" id="timerStatus" role="status">Ready when you are.</p></div>
+        </div>
+      </section>
+
+      <section class="page" id="page-journal">
+        <div class="page-intro"><p class="eyebrow">A PLACE TO UNLOAD YOUR THOUGHTS</p><h1>Your private journal.</h1><p>This space is for you. Write as much or as little as you like.</p></div>
+        <div class="journal-grid">
+          <div class="panel journal-editor"><div class="panel-head"><h3 id="journalFormTitle">A page for today</h3><span class="privacy-inline">♧ Browser demo</span></div><form id="journalForm"><label class="field-label" for="journalTitle">Title <span>OPTIONAL</span></label><input id="journalTitle" maxlength="100" placeholder="A thought, a moment, a feeling..."><label class="field-label" for="journalBody">What's on your mind?</label><textarea id="journalBody" rows="8" maxlength="5000" placeholder="You can start anywhere. There is no perfect way to write this."></textarea><div class="form-footer"><span class="tiny-note">Only saved in this browser demo.</span><button class="btn btn-primary" type="submit" id="journalSave">Save entry</button></div></form><p id="journalFeedback" class="feedback" role="status"></p></div>
+          <div class="panel journal-list-panel"><div class="panel-head"><h3>Your pages</h3><span class="count-badge" id="journalCount">0 entries</span></div><div id="journalList" class="journal-list"></div></div>
+        </div>
+      </section>
+
+      <section class="page" id="page-insights">
+        <div class="page-intro"><p class="eyebrow">NOTICE, DON'T JUDGE</p><h1>Your reflections.</h1><p>These are personal check-ins, not a score or a diagnosis.</p></div>
+        <div class="insight-stats"><div class="panel stat-card"><span class="stat-icon lilac-icon">☻</span><p>Check-ins recorded</p><strong id="statTotal">0</strong><small>Across your saved entries</small></div><div class="panel stat-card"><span class="stat-icon mint-icon">✳</span><p>Most recent mood</p><strong id="statLatest">—</strong><small id="statLatestDate">Whenever you're ready</small></div><div class="panel stat-card"><span class="stat-icon peach-icon">✎</span><p>Journal pages</p><strong id="statJournal">0</strong><small>Your words, your space</small></div></div>
+        <div class="panel chart-panel"><div class="panel-head"><div><p class="eyebrow">YOUR CHECK-IN HISTORY</p><h3>Recent moods</h3></div><span class="soft-label">Last 7 entries</span></div><div id="moodChart" class="mood-chart"></div><div class="chart-note">Moods are personal and can change for many reasons. This view is for reflection, not diagnosis.</div></div>
+      </section>
+
+      <section class="page" id="page-support">
+        <div class="page-intro"><p class="eyebrow">YOU DON'T HAVE TO HANDLE EVERYTHING ALONE</p><h1>Support is here.</h1><p>Reaching out can be a brave next step. Choose what feels right for you.</p></div>
+        <div class="support-banner"><div><span class="hero-tag">A GENTLE REMINDER</span><h2>You deserve support, even if you can't explain everything yet.</h2><p>MindMate isn't a crisis service or a replacement for a qualified professional.</p></div><span class="support-heart">♡</span></div>
+        <div class="support-grid"><div class="panel support-card"><span class="support-icon lilac-icon">☏</span><h3>Someone you trust</h3><p>Consider reaching out to a trusted friend, family member, teacher, mentor, or another person who helps you feel safe.</p><button class="btn btn-outline" id="trustedTips">What could I say?</button><p class="support-extra hidden" id="trustedText">“Hey, I've had a lot on my mind lately. Could you listen for a little while? I don't need you to fix it.”</p></div><div class="panel support-card"><span class="support-icon mint-icon">♡</span><h3>Campus counselling</h3><p>If your college has a counsellor or student support service, you can ask about confidential appointments and what to expect.</p><p class="tiny-note">Add your institution's verified contact details before presenting or publishing.</p></div><div class="panel support-card"><span class="support-icon peach-icon">✳</span><h3>Urgent help</h3><p>If you feel unsafe or think you may be in immediate danger, contact local emergency services or go to a trusted person nearby.</p><p class="tiny-note">For India, emergency number 112 is used for emergency assistance. Verify local resources before deployment.</p></div></div>
+      </section>
+
+      <section class="page" id="page-settings">
+        <div class="page-intro"><p class="eyebrow">YOUR SPACE, YOUR CHOICES</p><h1>Settings & privacy.</h1><p>This demo stores entries in this browser only. It does not have accounts or cloud sync.</p></div>
+        <div class="panel settings-panel"><div class="settings-row"><div><h3>Demo mode</h3><p>Entries are stored in local browser storage on this device.</p></div><span class="demo-pill"><i></i> ACTIVE</span></div><div class="settings-row"><div><h3>Clear demo data</h3><p>Delete all mood entries, tasks, and journal pages stored by this demo.</p></div><button class="btn btn-danger" id="clearData">Clear my demo data</button></div><div class="settings-row"><div><h3>Wellness disclaimer</h3><p>MindMate supports reflection and everyday wellbeing. It does not diagnose, treat, or replace professional mental health care.</p></div></div><p class="feedback" id="settingsFeedback" role="status"></p></div>
+      </section>
+
+      <footer class="footer"><span>♡ Made with care, for the days that need a little care.</span><span>MindMate · Student wellness concept</span></footer>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
